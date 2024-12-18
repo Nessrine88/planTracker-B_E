@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2024-12-17
+  user: one
+  task: one
+  status: false
+
+two:
+  date: 2024-12-17
+  user: two
+  task: two
+  status: false

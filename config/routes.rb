@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :users, only: [] do
-    resources :tasks
+    resources :tasks do
+     resources :daily_task_tables
+    end
   end
   get "up" => "rails/health#show", as: :rails_health_check
 

@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_13_214350) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_17_223748) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "daily_task_tables", force: :cascade do |t|
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.bigint "task_id", null: false
+    t.boolean "status", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_daily_task_tables_on_task_id"
+    t.index ["user_id"], name: "index_daily_task_tables_on_user_id"
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
@@ -40,5 +51,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_13_214350) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "daily_task_tables", "tasks"
+  add_foreign_key "daily_task_tables", "users"
   add_foreign_key "tasks", "users"
 end
