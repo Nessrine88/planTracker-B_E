@@ -1,6 +1,6 @@
 # app/services/authentication_service.rb
 class AuthenticationService
-    ACCESS_TOKEN_EXPIRATION = 15.minutes
+    ACCESS_TOKEN_EXPIRATION = 1.days
     REFRESH_TOKEN_EXPIRATION = 30.days
   
     def self.encode_access_token(user_id)
