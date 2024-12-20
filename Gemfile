@@ -51,5 +51,5 @@ gem 'rack-cors'
 gem 'devise'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
-gem "warden-jwt_auth", "~> 0.10.0"
+gem "warden-jwt_auth", "~> 0.11.0"
 gem 'responders'
